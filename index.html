@@ -7,10 +7,17 @@
     <meta charset="UTF-8">
     <title>TriviaGame</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
   </head>
 
   <body>
+      <div class="wrapper">
+
+          <section id="main-content">
+            <h1>Trivia Game </h1>
+          </section>
+      </div>
 
     <div id="show-number"></div>
 
@@ -19,13 +26,19 @@
     <button id="start">Start</button>
     <button id="resume">Resume</button>
 
+    <br>
+
+    <div id="questionBody">
+        <p>question Body</p>
+    </div>
+
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Script -->
     <script type="text/javascript">
 
-    var number = 100;
+    var number = 5;
 
     var intervalId;
 
@@ -39,9 +52,9 @@
 
     function decrement() {
       number--;
-      $("#show-number").html("<h2>" + number +  "</h2>");
+      $("#show-number").html("<h2>" + number + ' Seconds left!' + "</h2>");
       if (number === 0) {
-        stop();
+        clearInterval(intervalId);
         alert("Time Up!");
       }
     }
@@ -52,36 +65,33 @@
 
     run();
 
-const questionObject1={
+questionArray=[
+
+ questionObject1={
     question1:" When was the fist oil well drilled in the US?",
     multipleChoice1:["1880", "1870", "1860", "1850"],
     correctAnswer1: "1800"
-}
-console.log(questionObject1.multipleChoice1[2])
-
-const questionObject2={
+},
+ questionObject2={
     question2:"Which State was the first oil well drilled in?",
-    multipleChoice2: ["TX", "OK", "CO", "CA"]
-}
-console.log(questionObject2.multipleChoice2[2])
-
-const questionObject3={
+    multipleChoice2: ["TX", "OK", "CO", "CA"],
+    correctAnswer2: "OK"
+},
+ questionObject3={
     question3:"Which company did drill the first oil well in the US?",
-    multipleChoice3: ["Darcy", "Exxon", "Texaco", "Chevron"]
-}
-console.log(questionObject3.multipleChoice3[2])
-
-const questionObject4={
+    multipleChoice3: ["Darcy", "Exxon", "Texaco", "Chevron"],
+    correctAnswer3: "Darcy"
+},
+ questionObject4={
     question4:"What type of hydrocaron did the first well produce?",
-    multipleChoice4: ["oil", "dry gas", "wet gas", "condensate"]
+    multipleChoice4: ["oil", "dry gas", "wet gas", "condensate"],
+    correctAnswer1: "oil"
+}];
+
+for (let i=0; i<questionArray.length; i++){
+
+$("#questionBody").text(questionArray[i]);
 }
-console.log(questionObject4.multipleChoice4[2])
-
-
-
-
-
-
     </script>
 
   </body>
