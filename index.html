@@ -6,6 +6,7 @@
 
     <meta charset="UTF-8">
     <title>TriviaGame</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
 
   </head>
 
@@ -50,10 +51,37 @@
     }
 
     run();
-var question1=" When wa the fist oil well drilled in the US?";
-var question2="Which State was the first oil well drilled in?";
-var question3="Which company did drill the first oil well in the US?";
-var question4="What type of hydrocaron did the first well produce?";
+
+const questionObject1={
+    question1:" When was the fist oil well drilled in the US?",
+    multipleChoice1:["1880", "1870", "1860", "1850"],
+    correctAnswer1: "1800"
+}
+console.log(questionObject1.multipleChoice1[2])
+
+const questionObject2={
+    question2:"Which State was the first oil well drilled in?",
+    multipleChoice2: ["TX", "OK", "CO", "CA"]
+}
+console.log(questionObject2.multipleChoice2[2])
+
+const questionObject3={
+    question3:"Which company did drill the first oil well in the US?",
+    multipleChoice3: ["Darcy", "Exxon", "Texaco", "Chevron"]
+}
+console.log(questionObject3.multipleChoice3[2])
+
+const questionObject4={
+    question4:"What type of hydrocaron did the first well produce?",
+    multipleChoice4: ["oil", "dry gas", "wet gas", "condensate"]
+}
+console.log(questionObject4.multipleChoice4[2])
+
+
+
+
+
+
     </script>
 
   </body>
