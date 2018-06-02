@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>TriviaGame</title>
+
+  </head>
+
+  <body>
+
+    <div id="show-number"></div>
+
+    <br>
+
+    <button id="start">Start</button>
+    <button id="resume">Resume</button>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript">
+
+    var number = 100;
+
+    var intervalId;
+
+    $("#stop").on("click", stop);
+
+    $("#resume").on("click", run);
+
+    function run() {
+      intervalId = setInterval(decrement, 1000);
+    }
+
+    function decrement() {
+      number--;
+      $("#show-number").html("<h2>" + number +  "</h2>");
+      if (number === 0) {
+        stop();
+        alert("Time Up!");
+      }
+    }
+
+    function stop() {
+      clearInterval(intervalId);
+    }
+
+    run();
+var question1=" When wa the fist oil well drilled in the US?";
+var question2="Which State was the first oil well drilled in?";
+var question3="Which company did drill the first oil well in the US?";
+var question4="What type of hydrocaron did the first well produce?";
+    </script>
+
+  </body>
+
+</html>
