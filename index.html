@@ -29,7 +29,8 @@
     <br>
 
     <div id="questionBody">
-        <p>question Body</p>
+        <p>Questions</p>
+        
     </div>
 
     <!-- jQuery -->
@@ -67,31 +68,47 @@
 
 questionArray=[
 
- questionObject1={
-    question1:" When was the fist oil well drilled in the US?",
-    multipleChoice1:["1880", "1870", "1860", "1850"],
-    correctAnswer1: "1800"
+ {
+    question:" When was the first oil well drilled in the US?",
+    multipleChoice:["1880", "1870", "1860", "1850"],
+    correctAnswer: "1800"
 },
- questionObject2={
-    question2:"Which State was the first oil well drilled in?",
-    multipleChoice2: ["TX", "OK", "CO", "CA"],
-    correctAnswer2: "OK"
+ {
+    question:"Which State was the first oil well drilled in?",
+    multipleChoice: ["TX", "OK", "CO", "CA"],
+    correctAnswer: "OK"
 },
- questionObject3={
-    question3:"Which company did drill the first oil well in the US?",
-    multipleChoice3: ["Darcy", "Exxon", "Texaco", "Chevron"],
-    correctAnswer3: "Darcy"
+ {
+    question:"Which company did drill the first oil well in the US?",
+    multipleChoice: ["Darcy", "Exxon", "Texaco", "Chevron"],
+    correctAnswer: "Darcy"
 },
- questionObject4={
-    question4:"What type of hydrocaron did the first well produce?",
-    multipleChoice4: ["oil", "dry gas", "wet gas", "condensate"],
-    correctAnswer1: "oil"
+ {
+    question:"What type of hydrocaron did the first well produce?",
+    multipleChoice: ["oil", "dry gas", "wet gas", "condensate"],
+    correctAnswer: "oil"
 }];
 
 for (let i=0; i<questionArray.length; i++){
+var questionDiv=$("<div>")
 
-$("#questionBody").text(questionArray[i]);
+questionDiv.append(questionArray[i].question);
+$("#questionBody").append(questionDiv);
+
+
+var multipleChoiceDiv=$("<div>")
+    for (let j=0; j<questionArray.length; j++){
+multipleChoiceDiv.append("<input type='radio' value='multipleChoice[i]' name='"+i+"'>" + questionArray[i].multipleChoice[j])
 }
+
+$("#questionBody").append(multipleChoiceDiv);
+
+
+// break
+console.log("this is questionDiv" + questionDiv);
+console.log("this is questionArray" + questionArray[i]);
+}
+
     </script>
 
   </body>
