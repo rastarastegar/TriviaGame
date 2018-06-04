@@ -3,12 +3,10 @@
 <html lang="en-us">
 
   <head>
-
     <meta charset="UTF-8">
     <title>TriviaGame</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <link rel="index" type="text/css" href="css/reset.css">
+    <link rel="index" type="text/css" href="css/style.css">
   </head>
 
   <body>
@@ -39,7 +37,7 @@
     <!-- Script -->
     <script type="text/javascript">
 
-    var number = 5;
+    var number = 90;
 
     var intervalId;
 
@@ -97,14 +95,12 @@ $("#questionBody").append(questionDiv);
 
 
 var multipleChoiceDiv=$("<div>")
-    for (let j=0; j<questionArray.length; j++){
-multipleChoiceDiv.append("<input type='radio' value='multipleChoice[i]' name='"+i+"'>" + questionArray[i].multipleChoice[j])
-}
+    for (let j=0; j<4; j++){
+    multipleChoiceDiv.append("<input class='selectedChoice' type='radio' value='multipleChoice[i]' name='"+i+"'>" + questionArray[i].multipleChoice[j])
+    }
 
 $("#questionBody").append(multipleChoiceDiv);
 
-
-// break
 console.log("this is questionDiv" + questionDiv);
 console.log("this is questionArray" + questionArray[i]);
 }
